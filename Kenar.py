@@ -4,4 +4,6 @@ class Kenar:
     def __init__(self,ism):
         self.isim=ism
         self.toplamSayim=0
-        self.sinifiminSayilari=[]
+
+    def sinifiminSayilariniAyarla(self,hedefDegerleriSayisi):
+        self.sinifiminSayilari=[0]*hedefDegerleriSayisi
