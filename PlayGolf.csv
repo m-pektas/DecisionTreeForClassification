@@ -1,0 +1,15 @@
+Outlook,Temp,Humidity,Windy,Play Golf
+Rainy,Hot,High,False,No
+Rainy,Hot,High,True,No
+Overcast,Hot,High,False,Yes
+Sunny,Mid,High,False,Yes
+Sunny,Cool,Normal,False,Yes
+Sunny,Cool,Normal,True,No
+Overcast,Cool,Normal,True,Yes
+Rainy,Mid,High,False,No
+Rainy,Cool,Normal,False,Yes
+Sunny,Mid,Normal,False,Yes
+Rainy,Mid,Normal,True,Yes
+Overcast,Mid,High,True,Yes
+Overcast,Hot,Normal,False,Yes
+Sunny,Mid,High,True,No
