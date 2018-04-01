@@ -21,9 +21,11 @@ class Nitelik:
         self.kenarlarim=self.KenarlarımıBul()
         self.HedefNiteligim=hdfNit
         self.HedefKolonumunDegerleri = self.ayrıkDegerBul(nit='hedef', Hedef=hdfNit)
-        self.kenarlariminHedefDegeriSayisi()  #kenarların hedeflerinin ayrık değer sayıları ayarlandı.
         if not self.HedefMi:
-            self.kenarlarinSinifDegerleriniBul()
+            self.kenarlariminHedefDegeriSayisi()
+        else:
+            self.kenarlariminSayilari = self.kenarlariminSayilariniBul()
+        self.kazanc = 0
 
 
 
@@ -37,10 +39,19 @@ class Nitelik:
             kenarlar.append(x)
         return kenarlar
 
+
     def kenarlariminHedefDegeriSayisi(self):
+        dict = {}
+        for l in self.kenarlarim:
+            for i in self.HedefKolonumunDegerleri:
+                l.sinifiminSayilariSozluk[i] = 0
+
         if not self.HedefMi:
-            for i in self.kenarlarim:
-                i.sinifiminSayilariniAyarla(hedefDegerleriSayisi=len(self.HedefKolonumunDegerleri))
+            for i in range(0,len(self.kolonHalim)):
+                for j in self.kenarlarim:
+                    if self.kolonHalim[i] == j.isim:
+                        j.toplamSayim = j.toplamSayim + 1
+                        j.sinifiminSayilariSozluk[self.HedefNiteligim.kolonHalim[i]]=j.sinifiminSayilariSozluk[self.HedefNiteligim.kolonHalim[i]]+1
 
 
     #verilen datanın içinde verilen isimli kolondaki ayrık değerleri bulur ve liste hakinde döndürür.
@@ -61,18 +72,17 @@ class Nitelik:
                 ayrıkDegerler.append(i)
         return ayrıkDegerler
 
-    def kenarlarinSinifDegerleriniBul(self):
-        nitelikKolon=self.kolonHalim
-        hedefKolon=self.HedefNiteligim.kolonHalim
-        if(self.kenarlarim is None):
-            print("***İlginç bir şekilde bu niteliğin kenarım listesi boş. Bu metod çalışamaz..")
-        else:
-            for i in range(0,len(nitelikKolon)):                                    #Niteliğimin değerlerinde gez
-                for j in range(0,len(self.kenarlarim)):                             #kenarlarımda gez
-                    if nitelikKolon[i]==self.kenarlarim[j].isim:                         #kenarlarımdan kaçıncıya denk geliyor ise
-                        for k in range(0,len(self.HedefKolonumunDegerleri)):
-                            if hedefKolon[i] == self.HedefKolonumunDegerleri[k]:
-                                #hangi sınıftan kac tane oldugunu sayıyor.
-                                self.kenarlarim[j].sinifiminSayilari[k] = self.kenarlarim[j].sinifiminSayilari[k]+1
-                                #o kenarın kaç adet değeri oluğunu hesaplıyor.
-                                self.kenarlarim[j].toplamSayim = self.kenarlarim[j].toplamSayim + 1
+    def kenarlariminSayilariniBul(self):
+        dict={}                                 #her kenara karşılık sayac tululacak sözlük
+        ayrikDegerlerim = self.ayrıkDegerBul()  #ayrık değerler bulundu
+
+        for k in ayrikDegerlerim:               #her ayrık değerin başlangıç sayac değeri 0 yapildi
+            dict[k]=0
+
+        for i in range(0,len(self.kolonHalim)):  #kolonda gez
+            for j in ayrikDegerlerim:            #ayrık değerlerde gez
+                if self.kolonHalim[i] == j:      #kolondaki değer ayrık değerlerimden birine eşitse ki eşit olmak zorunda
+                    dict[j]=dict[j]+1            #sözlükteki o ayrık değerin sayacını bir artır
+
+        return dict
+
