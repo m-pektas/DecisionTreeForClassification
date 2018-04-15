@@ -1,10 +1,10 @@
-from math import log2
+
+
 #Bu sınıf gerekli matematiksel hesaplamaların yapıldığı sınıftır.
+from math import log2
 
 class HesapMakinesi:
     #Verilen niteligin entropisinin ağırlıklı ortalamasını bulur
-
-    """Test Edildi"""
     def genelEntropiHesapla(self,hdfNit):
         degerlerSozlugu = hdfNit.kenarlariminSayilari
         toplamKayıtSayisi = len(hdfNit.kolonHalim)
@@ -20,8 +20,6 @@ class HesapMakinesi:
         sonuc = genelEntropi-NitEntropi
         return sonuc
 
-
-    """Test Edildi"""
     def agirlikliEntropiBul(self,nitelik):
         kenarlar = nitelik.kenarlarim
         toplamKayitSayisi = len(nitelik.kolonHalim)
@@ -41,3 +39,8 @@ class HesapMakinesi:
                 sonuc = sonuc + (agirlik * entropi) #agırlıklı entropi hesaplandı.
 
         return sonuc
+
+
+
+
+

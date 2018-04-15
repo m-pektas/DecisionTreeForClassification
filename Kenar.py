@@ -1,3 +1,6 @@
+
+
+
 "Bu sınıf her bir niteliğin bir ayrık değerine yani kenarına denk gelmektedir."
 
 class Kenar:

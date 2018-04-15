@@ -7,6 +7,7 @@ from Hesapla import HesapMakinesi
 dosya_adi="PlayGolf.csv"
 data=pd.read_csv(dosya_adi)
 
+
 #Nitelik isimleri
 nitelikler=["Outlook","Temp","Humidity","Windy"] #data.columns diyerekte alınabilirdi
 hedefNitelikAdi="Play Golf"
@@ -21,22 +22,34 @@ for i in nitelikler:
 
 
                                         #Kök düğüm hesaplama
-
+"""
 #herhangi bir niteliğin kenarlarının sayısı ve hedef kolondaki hangi sınıfa kaç kere denk geldiği
 for i in  nitelikListesi[0].kenarlarim:
     print("-",i.sinifiminSayilariSozluk)
 
 print(nitelikListesi[0].isim," niteliğinin ",nitelikListesi[0].kenarlarim[0].isim," kenarının toplam bulunma sayısı :",
       nitelikListesi[0].kenarlarim[0].toplamSayim)
+"""
 
-#hedef kolondaki ayrık değer ve sayılari.
-print("---Hedef Nitelik---")
+
+
 hm=HesapMakinesi()
 genelEntropi = hm.genelEntropiHesapla(hdfNit=hedefNitelik)
 print("Genel Entropi :",genelEntropi)
 
 
-print("\nagırlıklı ortalama :",hm.agirlikliEntropiBul(nitelik=nitelikListesi[0]))
+print("Agırlıklı Ortalama :",hm.agirlikliEntropiBul(nitelik=nitelikListesi[0]))
+
+
+print ("-----------------------------------------------")
+xyz = data[data['Outlook']=='Sunny']
+xyz = xyz.reset_index(drop=True)
+xyzhedefNitelik=Nitelik(ism=hedefNitelikAdi,data=xyz)
+
+print("Filtrelenmiş Veri : \n",xyz)
+print("\nFiltrelenmiş Veri Genel Entropi :",hm.genelEntropiHesapla(hdfNit=xyzhedefNitelik))
+newNitelik = Nitelik(ism='Temp',data=xyz,hdfNit=xyzhedefNitelik)
+print("Filtrelenmiş Veride seçilen bir niteliğin ağırlıklı ortalaması : : ",hm.agirlikliEntropiBul(nitelik=newNitelik))
 
 
 
