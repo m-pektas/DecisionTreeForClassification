@@ -42,5 +42,34 @@ class HesapMakinesi:
 
 
 
+    #kenarlardan biri direk yaprağa bağlanıyorsa yaprağın değerini döndür bağlanmıyorsa "düğüm" döndür.
+    def yaprakBul(self,kenar,hedefKolonunDegerleri,sinifinSayilari):
+        YaprakVarIse = []
+        for j in hedefKolonunDegerleri:
+            if sinifinSayilari[j] != 0:
+                YaprakVarIse.append(j)
+
+        if len(YaprakVarIse) == 1:
+            return YaprakVarIse[0]
+        else:
+            return "Dügüm"
+
+
+    #ağaç oluşturur.
+    def CreateTree(self,root,data):
+
+        level=None
+
+        #kökte gez
+        for i in root.kenarlarim:
+            #direk yaprağa bağlanıyorsa bağla bağlanmıyorsa "düğüm" değerini ata
+            x = self.yaprakBul(kenar=i,hedefKolonunDegerleri=root.HedefKolonumunDegerleri,sinifinSayilari=i.sinifiminSayilariSozluk)
+            i.targetNode=x
+            print("\nYaprak sa değeri değilse düğüm yaz :",x)
+
+            newData = data[data[root.isim] == i.isim]  # root niteliğinin i kenarına göre veriyi filtreledim.
+            newData = newData.reset_index(drop=True)
+            print("\nNew Data : \n", newData)
+            print("\nSözlük:",i.sinifiminSayilariSozluk)
 
 

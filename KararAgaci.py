@@ -3,6 +3,9 @@ import pandas as pd
 from Nitelik import Nitelik
 from Hesapla import HesapMakinesi
 
+
+
+
 #Veri import
 dosya_adi="PlayGolf.csv"
 data=pd.read_csv(dosya_adi)
@@ -22,26 +25,24 @@ for i in nitelikler:
 
 
                                         #Kök düğüm hesaplama
-"""
-#herhangi bir niteliğin kenarlarının sayısı ve hedef kolondaki hangi sınıfa kaç kere denk geldiği
-for i in  nitelikListesi[0].kenarlarim:
-    print("-",i.sinifiminSayilariSozluk)
-
-print(nitelikListesi[0].isim," niteliğinin ",nitelikListesi[0].kenarlarim[0].isim," kenarının toplam bulunma sayısı :",
-      nitelikListesi[0].kenarlarim[0].toplamSayim)
-"""
-
-
 
 hm=HesapMakinesi()
 genelEntropi = hm.genelEntropiHesapla(hdfNit=hedefNitelik)
 print("Genel Entropi :",genelEntropi)
 
+gain=0
+rootNode=None
+for i in nitelikListesi:
+    agirlikliEntropi=hm.agirlikliEntropiBul(nitelik=i)
+    if gain < hm.kazancHesapla(genelEntropi=genelEntropi,NitEntropi=agirlikliEntropi):
+        gain = hm.kazancHesapla(genelEntropi=genelEntropi,NitEntropi=agirlikliEntropi)
+        rootNode=i
 
-print("Agırlıklı Ortalama :",hm.agirlikliEntropiBul(nitelik=nitelikListesi[0]))
+print("Genel Entropi:",genelEntropi," dir ve kök için en iyi node :",rootNode.isim," olarak bulundu. Ve bu node un gaini :",gain)
 
 
-print ("-----------------------------------------------")
+"""
+print ("--------------------15.04.2018---------------------------")
 xyz = data[data['Outlook']=='Sunny']
 xyz = xyz.reset_index(drop=True)
 xyzhedefNitelik=Nitelik(ism=hedefNitelikAdi,data=xyz)
@@ -50,6 +51,13 @@ print("Filtrelenmiş Veri : \n",xyz)
 print("\nFiltrelenmiş Veri Genel Entropi :",hm.genelEntropiHesapla(hdfNit=xyzhedefNitelik))
 newNitelik = Nitelik(ism='Temp',data=xyz,hdfNit=xyzhedefNitelik)
 print("Filtrelenmiş Veride seçilen bir niteliğin ağırlıklı ortalaması : : ",hm.agirlikliEntropiBul(nitelik=newNitelik))
+"""
+
+print("------------------16.04.2018--------------------------")
+#print("RootNode :",[i.isim for i in rootNode.kenarlarim])
+hm.CreateTree(root=rootNode,data=data)
+
+
 
 
 
