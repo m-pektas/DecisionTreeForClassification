@@ -5,7 +5,6 @@ from Hesapla import HesapMakinesi
 
 
 
-
 #Veri import
 dosya_adi="PlayGolf.csv"
 data=pd.read_csv(dosya_adi)
@@ -24,21 +23,46 @@ for i in nitelikler:
     nitelikListesi.append(x)
 
 
-                                        #Kök düğüm hesaplama
+                                #---------Kök düğüm hesaplama----------
+print("*** KÖK DÜĞÜM HESAPLAMA ***")
 
 hm=HesapMakinesi()
 genelEntropi = hm.genelEntropiHesapla(hdfNit=hedefNitelik)
-print("Genel Entropi :",genelEntropi)
+print("\t-Genel Entropi :",genelEntropi)
+gain,rootNode=hm.kokBul(nitelikListesi=nitelikListesi,genelEntropi=genelEntropi)
+print("\t-Genel Entropi:",genelEntropi," dir ve kök için en iyi node :",rootNode.isim," olarak bulundu. Ve bu node un gaini :",gain)
+print("*Kök düğüm hesaplama bitti.")
+                                        #**Kök düğüm bulundu**
 
-gain=0
-rootNode=None
-for i in nitelikListesi:
-    agirlikliEntropi=hm.agirlikliEntropiBul(nitelik=i)
-    if gain < hm.kazancHesapla(genelEntropi=genelEntropi,NitEntropi=agirlikliEntropi):
-        gain = hm.kazancHesapla(genelEntropi=genelEntropi,NitEntropi=agirlikliEntropi)
-        rootNode=i
+                             #------------Ağaç Oluştur-----------------
 
-print("Genel Entropi:",genelEntropi," dir ve kök için en iyi node :",rootNode.isim," olarak bulundu. Ve bu node un gaini :",gain)
+print("\n\n")
+print("*** AĞAÇ OLUŞTUR ***")
+#hm.CreateTree(root=rootNode,hedefNitelikAdı=hedefNitelikAdi)
+
+
+                              #------------ DENEME ALANI ---------------
+
+#!!!!!! KENARIN FİLTRELENMİŞ DATASININ HEDEF NITELİĞİ OLUŞTURULAMIYOR. Bu durumda genel entropi dehesaplanamıyor. Haliyle ağaç oluşturulamıyor.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 """
@@ -52,13 +76,6 @@ print("\nFiltrelenmiş Veri Genel Entropi :",hm.genelEntropiHesapla(hdfNit=xyzhe
 newNitelik = Nitelik(ism='Temp',data=xyz,hdfNit=xyzhedefNitelik)
 print("Filtrelenmiş Veride seçilen bir niteliğin ağırlıklı ortalaması : : ",hm.agirlikliEntropiBul(nitelik=newNitelik))
 """
-
-print("------------------16.04.2018--------------------------")
-#print("RootNode :",[i.isim for i in rootNode.kenarlarim])
-hm.CreateTree(root=rootNode,data=data)
-
-
-
 
 
 

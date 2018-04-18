@@ -1,7 +1,8 @@
 
-
 #Bu sınıf gerekli matematiksel hesaplamaların yapıldığı sınıftır.
 from math import log2
+from Nitelik import Nitelik
+
 
 class HesapMakinesi:
     #Verilen niteligin entropisinin ağırlıklı ortalamasını bulur
@@ -40,8 +41,6 @@ class HesapMakinesi:
 
         return sonuc
 
-
-
     #kenarlardan biri direk yaprağa bağlanıyorsa yaprağın değerini döndür bağlanmıyorsa "düğüm" döndür.
     def yaprakBul(self,kenar,hedefKolonunDegerleri,sinifinSayilari):
         YaprakVarIse = []
@@ -56,20 +55,73 @@ class HesapMakinesi:
 
 
     #ağaç oluşturur.
-    def CreateTree(self,root,data):
+    def CreateTree(self,root,hedefNitelikAdı):
+        level=[]
+        level.append(root)
+        temp = []
+        while True:
+            for i in level:
+                if not isinstance(i,str):
+                    print()
+                    #kenarlarını bul,datasını güncelle ve temiz listeye ekle ve targetnode larını bulununn şey yap.
+                    #temp e ekle
+                else:
+                    print()
+                    #temp'e ekle
 
-        level=None
+            dugumVarMı = False
+            for i in temp:
+                if isinstance(i, Nitelik):
+                    dugumVarMı = True
 
-        #kökte gez
-        for i in root.kenarlarim:
-            #direk yaprağa bağlanıyorsa bağla bağlanmıyorsa "düğüm" değerini ata
+            if dugumVarMı == True:                                  #düğüm var ise
+                break
+            else:                                                   #düğüm kalmadıysa
+                level.clear()
+                level = temp.copy()
+                temp.clear()
+
+
+    def kokBul(self,nitelikListesi,genelEntropi):
+        gain = 0
+        rootNode = None
+        for i in nitelikListesi:
+            agirlikliEntropi = self.agirlikliEntropiBul(nitelik=i)
+            if gain < self.kazancHesapla(genelEntropi=genelEntropi, NitEntropi=agirlikliEntropi):
+                gain = self.kazancHesapla(genelEntropi=genelEntropi, NitEntropi=agirlikliEntropi)
+                rootNode = i
+        return gain,rootNode
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    """
+    for i in root.kenarlarim:                                   #kökte gez
+                                                                    #direk yaprağa bağlanıyorsa bağla bağlanmıyorsa "düğüm" değerini ata
             x = self.yaprakBul(kenar=i,hedefKolonunDegerleri=root.HedefKolonumunDegerleri,sinifinSayilari=i.sinifiminSayilariSozluk)
-            i.targetNode=x
-            print("\nYaprak sa değeri değilse düğüm yaz :",x)
-
-            newData = data[data[root.isim] == i.isim]  # root niteliğinin i kenarına göre veriyi filtreledim.
+            level.append(x)
+            #print("\nYaprak sa değeri değilse düğüm yaz :",x)
+    
+            newData = data[data[root.isim] == i.isim]               #root niteliğinin i kenarına göre veriyi filtreledim.
             newData = newData.reset_index(drop=True)
             print("\nNew Data : \n", newData)
             print("\nSözlük:",i.sinifiminSayilariSozluk)
-
-
+    """

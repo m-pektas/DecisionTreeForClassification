@@ -28,7 +28,9 @@ class Nitelik:
         kenarIsmleri=self.ayrıkDegerBul()
         kenarlar=[]
         for i in kenarIsmleri:
-            x=Kenar(ism=i)
+            xyz = self.data[self.data[self.isim] == i]
+            xyz = xyz.reset_index(drop=True)
+            x=Kenar(ism=i,data=xyz)
             kenarlar.append(x)
         return kenarlar
 
