@@ -38,24 +38,7 @@ print("*Kök düğüm hesaplama bitti.")
 
 print("\n\n")
 print("*** AĞAÇ OLUŞTUR ***")
-#hm.CreateTree(root=rootNode,hedefNitelikAdı=hedefNitelikAdi)
-
-
-                              #------------ DENEME ALANI ---------------
-
-#!!!!!! KENARIN FİLTRELENMİŞ DATASININ HEDEF NITELİĞİ OLUŞTURULAMIYOR. Bu durumda genel entropi dehesaplanamıyor. Haliyle ağaç oluşturulamıyor.
-
-
-
-
-
-
-
-
-
-
-
-
+hm.CreateTree(root=rootNode,hedefNitelikAdi=hedefNitelikAdi,nitelikler=nitelikler)
 
 
 

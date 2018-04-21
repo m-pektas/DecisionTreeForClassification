@@ -55,31 +55,56 @@ class HesapMakinesi:
 
 
     #ağaç oluşturur.
-    def CreateTree(self,root,hedefNitelikAdı):
-        level=[]
+    def CreateTree(self,root,hedefNitelikAdi,nitelikler):
+        nitelikler.remove(root.isim)
+
+        level = []
         level.append(root)
         temp = []
         while True:
             for i in level:
-                if not isinstance(i,str):
-                    print()
-                    #kenarlarını bul,datasını güncelle ve temiz listeye ekle ve targetnode larını bulununn şey yap.
-                    #temp e ekle
+                if isinstance(i, Nitelik):                                           #düğüm ise
+                    for j in i.kenarlarim :                                         #kenarlarında gez
+                        hdfnt = Nitelik(ism=hedefNitelikAdi, data=j.data)
+                        genelentro = self.genelEntropiHesapla(hdfNit=hdfnt)
+                        gain=0
+                        node=None
+                        toplam=0
+                        for k in nitelikler:
+                            x = Nitelik(ism=k, data=j.data, hdfNit=hdfnt)
+                            agirlikliEntropi = self.agirlikliEntropiBul(nitelik=x)
+                            toplam=toplam+agirlikliEntropi
+                            if gain < self.kazancHesapla(genelEntropi=genelentro, NitEntropi=agirlikliEntropi):
+                                gain = self.kazancHesapla(genelEntropi=genelentro, NitEntropi=agirlikliEntropi)
+                                node = x
+
+                        if toplam==0:
+                            print(i.isim, "niteliğinin", j.isim, "kenarı için  in target node u :",j.data[hedefNitelikAdi][0])
+                            j.targetNode = node
+                            temp.append(node)
+                        else:
+                            print(i.isim, "niteliğinin", j.isim, "kenarı için  in target node u :", node.isim)
+                            j.targetNode = node
+                            temp.append(node)
+                            nitelikler.remove(node.isim)
                 else:
-                    print()
-                    #temp'e ekle
+                    temp.append(i)
+
+
 
             dugumVarMı = False
             for i in temp:
                 if isinstance(i, Nitelik):
                     dugumVarMı = True
 
-            if dugumVarMı == True:                                  #düğüm var ise
+            if dugumVarMı == False:                                  #düğüm yok ise ağaç oluştu demek
                 break
-            else:                                                   #düğüm kalmadıysa
+            else:                                                   #düğüm var ise devam etmeliyiz.
                 level.clear()
                 level = temp.copy()
                 temp.clear()
+
+
 
 
     def kokBul(self,nitelikListesi,genelEntropi):
