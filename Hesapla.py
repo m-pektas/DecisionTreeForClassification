@@ -4,7 +4,7 @@ from math import log2
 from Nitelik import Nitelik
 
 
-class HesapMakinesi:
+class MC_Karar_Agaci:
     #Verilen niteligin entropisinin ağırlıklı ortalamasını bulur
     def genelEntropiHesapla(self,hdfNit):
         degerlerSozlugu = hdfNit.kenarlariminSayilari
@@ -41,29 +41,27 @@ class HesapMakinesi:
 
         return sonuc
 
-    #kenarlardan biri direk yaprağa bağlanıyorsa yaprağın değerini döndür bağlanmıyorsa "düğüm" döndür.
-    def yaprakBul(self,kenar,hedefKolonunDegerleri,sinifinSayilari):
-        YaprakVarIse = []
-        for j in hedefKolonunDegerleri:
-            if sinifinSayilari[j] != 0:
-                YaprakVarIse.append(j)
-
-        if len(YaprakVarIse) == 1:
-            return YaprakVarIse[0]
-        else:
-            return "Dügüm"
-
 
     #ağaç oluşturur.
     def CreateTree(self,root,hedefNitelikAdi,nitelikler):
+
+        print("---------------------------------------------")
+        print("Oluşturulan Ağaç Yapısı :")
+        print("---------------------------------------------")
+
         nitelikler.remove(root.isim)
 
         level = []
         level.append(root)
         temp = []
+
         while True:
             for i in level:
                 if isinstance(i, Nitelik):                                           #düğüm ise
+                    if i.isim==root.isim:
+                        print("Kök Düğüm :"+i.isim)
+                    else:
+                        print("Düğüm :" + i.isim)
                     for j in i.kenarlarim :                                         #kenarlarında gez
                         hdfnt = Nitelik(ism=hedefNitelikAdi, data=j.data)
                         genelentro = self.genelEntropiHesapla(hdfNit=hdfnt)
@@ -78,19 +76,17 @@ class HesapMakinesi:
                                 gain = self.kazancHesapla(genelEntropi=genelentro, NitEntropi=agirlikliEntropi)
                                 node = x
 
-                        if toplam==0:
-                            print(i.isim, "niteliğinin", j.isim, "kenarı için  in target node u :",j.data[hedefNitelikAdi][0])
-                            j.targetNode = node
+                        if toplam == 0:
+                            print("\tKenar :",j.isim," Leaf :", j.data[hedefNitelikAdi][0])
+                            j.targetNode = j.data[hedefNitelikAdi][0]
                             temp.append(node)
                         else:
-                            print(i.isim, "niteliğinin", j.isim, "kenarı için  in target node u :", node.isim)
+                            print("\tKenar :",j.isim," Child :", node.isim)
                             j.targetNode = node
                             temp.append(node)
                             nitelikler.remove(node.isim)
                 else:
                     temp.append(i)
-
-
 
             dugumVarMı = False
             for i in temp:
@@ -104,7 +100,8 @@ class HesapMakinesi:
                 level = temp.copy()
                 temp.clear()
 
-
+        print("-----------------------------------------")
+        return root
 
 
     def kokBul(self,nitelikListesi,genelEntropi):
@@ -118,6 +115,51 @@ class HesapMakinesi:
         return gain,rootNode
 
 
+    def tahminEt(self,root,test,i):
+
+        gecici = root
+        index = i
+        sınır = test.shape[0]+i
+        result = []
+
+        while index < sınır:
+            gecici = root
+            while True:
+                for i in gecici.kenarlarim:
+                    if test[gecici.isim][index] == i.isim:
+                         gecici = i.targetNode
+                         break
+
+                if (isinstance(gecici, str)):
+                    break
+
+            result.append(gecici)
+            index = index+1
+
+        return result
+
+
+
+    def modelOlustur(self,data,hedefNitelikAdi):
+        #alınan data dan gerekli nitelikler oluşturuldu.
+        nitelik_adlari = data.columns.values.tolist()
+        nitelik_adlari.remove(hedefNitelikAdi)
+        hedefNitelik = Nitelik(ism=hedefNitelikAdi, data=data)
+        nitelikListesi = []
+        for i in nitelik_adlari:
+            x = Nitelik(ism=i, data=data, hdfNit=hedefNitelik)
+            nitelikListesi.append(x)
+
+        #kök düğümü oluştur.
+        genelEntropi = self.genelEntropiHesapla(hdfNit=hedefNitelik)
+        print("\t-Genel Entropi :", genelEntropi)
+        gain, rootNode = self.kokBul(nitelikListesi=nitelikListesi, genelEntropi=genelEntropi)
+        print("\t-Genel Entropi:", genelEntropi, " dir ve kök için en iyi node :", rootNode.isim,
+              " olarak bulundu. Ve bu node un gaini :", gain)
+
+        kok = self.CreateTree(root=rootNode, hedefNitelikAdi=hedefNitelikAdi, nitelikler=nitelik_adlari)
+
+        return kok
 
 
 
@@ -130,23 +172,3 @@ class HesapMakinesi:
 
 
 
-
-
-
-
-
-
-
-
-    """
-    for i in root.kenarlarim:                                   #kökte gez
-                                                                    #direk yaprağa bağlanıyorsa bağla bağlanmıyorsa "düğüm" değerini ata
-            x = self.yaprakBul(kenar=i,hedefKolonunDegerleri=root.HedefKolonumunDegerleri,sinifinSayilari=i.sinifiminSayilariSozluk)
-            level.append(x)
-            #print("\nYaprak sa değeri değilse düğüm yaz :",x)
-    
-            newData = data[data[root.isim] == i.isim]               #root niteliğinin i kenarına göre veriyi filtreledim.
-            newData = newData.reset_index(drop=True)
-            print("\nNew Data : \n", newData)
-            print("\nSözlük:",i.sinifiminSayilariSozluk)
-    """
