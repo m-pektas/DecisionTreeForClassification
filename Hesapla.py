@@ -1,10 +1,11 @@
 
 #Bu sınıf gerekli matematiksel hesaplamaların yapıldığı sınıftır.
+
 from math import log2
 from Nitelik import Nitelik
 
-
 class MC_Karar_Agaci:
+
     #Verilen niteligin entropisinin ağırlıklı ortalamasını bulur
     def genelEntropiHesapla(self,hdfNit):
         degerlerSozlugu = hdfNit.kenarlariminSayilari
@@ -42,7 +43,7 @@ class MC_Karar_Agaci:
         return sonuc
 
 
-    #ağaç oluşturur.
+   #ağaç oluşturur.
     def CreateTree(self,root,hedefNitelikAdi,nitelikler):
 
         print("---------------------------------------------")
@@ -139,12 +140,14 @@ class MC_Karar_Agaci:
         return result
 
 
-
     def modelOlustur(self,data,hedefNitelikAdi):
+
         #alınan data dan gerekli nitelikler oluşturuldu.
+
         nitelik_adlari = data.columns.values.tolist()
         nitelik_adlari.remove(hedefNitelikAdi)
         hedefNitelik = Nitelik(ism=hedefNitelikAdi, data=data)
+
         nitelikListesi = []
         for i in nitelik_adlari:
             x = Nitelik(ism=i, data=data, hdfNit=hedefNitelik)
@@ -160,15 +163,3 @@ class MC_Karar_Agaci:
         kok = self.CreateTree(root=rootNode, hedefNitelikAdi=hedefNitelikAdi, nitelikler=nitelik_adlari)
 
         return kok
-
-
-
-
-
-
-
-
-
-
-
-

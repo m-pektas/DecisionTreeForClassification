@@ -1,9 +1,10 @@
 #Bu nitelik sınıfı karar ağacındaki her bir düğümü temsil etmektedir.
-from Kenar import Kenar
-
 #Nitelik oluşturulurken ismi,bulunduğu data yapısı tutulur,ayrıca kenarlarının ne olduğu bilgiside hemen hesaplanarak muhafaza edilir.
 #Not: hedef niteliğin none olması hedef niteliğinin hedefi olmamasından kaynaklanır.Bu hedef nit e baglı olarak çalışan
 #ayrıkDegerBul metodu da buna uygun olarak hedef nit none ise kendi ayrık değerlerini hesaplıyor. :)
+
+from Kenar import Kenar
+
 class Nitelik:
 
     def __init__(self, ism, data, hdfNit=None):
@@ -60,7 +61,6 @@ class Nitelik:
         else:
             return None                                      #*Bilgi* Hedef kolonun hedef değerleri hesaplandı
                                                              #yada Ayrık değer bul metoduna yanlış parametreler verildi.
-
         ayrıkDegerler=[]
         for i in kolon:
             if i not in ayrıkDegerler:
@@ -69,15 +69,15 @@ class Nitelik:
 
 
     def kenarlariminSayilariniBul(self):
-        dict = {}                                 #her kenara karşılık sayac tululacak sözlük
-        ayrikDegerlerim = self.ayrıkDegerBul()    #ayrık değerler bulundu
+        dict = {}                                           #her kenara karşılık sayac tululacak sözlük
+        ayrikDegerlerim = self.ayrıkDegerBul()              #ayrık değerler bulundu
 
-        for k in ayrikDegerlerim:                  #her ayrık değerin başlangıç sayac değeri 0 yapildi
+        for k in ayrikDegerlerim:                           #her ayrık değerin başlangıç sayac değeri 0 yapildi
             dict[k] = 0
 
-        for i in range(0, len(self.kolonHalim)):   #kolonda gez
-            for j in ayrikDegerlerim:              #ayrık değerlerde gez
-                if self.kolonHalim[i] == j:        #kolondaki değer ayrık değerlerimden birine eşitse ki eşit olmak zorunda
-                    dict[j] = dict[j]+1            #sözlükteki o ayrık değerin sayacını bir artır
+        for i in range(0, len(self.kolonHalim)):            #kolonda gez
+            for j in ayrikDegerlerim:                       #ayrık değerlerde gez
+                if self.kolonHalim[i] == j:                 #kolondaki değer ayrık değerlerimden birine eşitse ki eşit olmak zorunda
+                    dict[j] = dict[j]+1                     #sözlükteki o ayrık değerin sayacını bir artır
 
         return dict
