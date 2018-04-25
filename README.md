@@ -10,7 +10,7 @@ verseti üzerinde test edilmiş ve gerekli hesaplamaları doğru yaptığı gör
 
 <h4>a)Yazılımın Agaç Gösterimi</h4>
  
-![](img/Ekran%20Alıntısı.JPG)
+![](Img/TreeStructure.JPG)
 
 <BR>
 
