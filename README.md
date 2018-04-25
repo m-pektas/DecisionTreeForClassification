@@ -7,6 +7,7 @@ Bu kod http://chem-eng.utoronto.ca/~datamining/dmc/datasets/weather_nominal.csv 
 verseti üzerinde test edilmiş ve gerekli hesaplamaları doğru yaptığı görülmüştür.
 
 <h2>AÇIKLAMA</h2>
+
 **a)	Yazılımın Agaç Gösterimi** <BR>
  
 ![picture](img/Ekran%20Alıntısı.JPG)
@@ -18,7 +19,9 @@ b)	Yukarıda verilen ağaçtaki düğümlerin açıklamaları<BR>
 •	**Nitelik :** Oluşturulacak sınıflandırma ağacındaki her bir niteliği belirtecek ve nitelik için gerekli işlemleri halledebilecek yetkinlikte bir sınıf.<BR>
 •	**Kenar :** Niteliğin içindeki kenarları ifade edecek sınıf.<BR>
 <BR>
+
 **c)	 Gelinen Aşama**
+
 <BR>
 •	Düğümü belirtecek nitelik nesnelerini oluşturacak ve verilen bir kolonu ihtiyacı karşılar şekilde (en azından şuan kestirebilinen ihtiyaçları)  yazılan nitelik sınıfı yazıldı.<BR>
 •	Düğümün kenarlarını ifade edecek bir kenar sınıfı yazıldı.<BR>
