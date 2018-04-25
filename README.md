@@ -15,10 +15,10 @@ verseti üzerinde test edilmiş ve gerekli hesaplamaları doğru yaptığı gör
 <BR>
 
 <h4>b)	Yukarıda verilen ağaçtaki düğümlerin açıklamaları</h4>
-•	**Decision Tree For Classification :** Projenin adı.<BR>
-•	**Hesapla :** ID3 algoritması için gereken hesaplamaları yapan fonksiyonları bulunduran matematiksel hesapları yapan sınıf.<BR>
-•	**Nitelik :** Oluşturulacak sınıflandırma ağacındaki her bir niteliği belirtecek ve nitelik için gerekli işlemleri halledebilecek yetkinlikte bir sınıf.<BR>
-•	**Kenar :** Niteliğin içindeki kenarları ifade edecek sınıf.<BR>
+•	<b>Decision Tree For Classification :</b> Projenin adı.<BR>
+•	<b>Hesapla :</b> ID3 algoritması için gereken hesaplamaları yapan fonksiyonları bulunduran matematiksel hesapları yapan sınıf.<BR>
+•	<b>Nitelik :</b> Oluşturulacak sınıflandırma ağacındaki her bir niteliği belirtecek ve nitelik için gerekli işlemleri halledebilecek yetkinlikte bir sınıf.<BR>
+•	<b>Kenar :</b> Niteliğin içindeki kenarları ifade edecek sınıf.<BR>
 <BR>
 
 <h4>c)Gelinen Aşama</h4>
