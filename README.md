@@ -8,19 +8,20 @@ verseti üzerinde test edilmiş ve gerekli hesaplamaları doğru yaptığı gör
 
 <h2>AÇIKLAMA</h2>
 
-**a)	Yazılımın Agaç Gösterimi** <BR>
+<h4>a)Yazılımın Agaç Gösterimi</h4>
  
 ![](img/Ekran%20Alıntısı.JPG)
+
 <BR>
 
-**b)	Yukarıda verilen ağaçtaki düğümlerin açıklamaları**<BR>
+<h4>b)	Yukarıda verilen ağaçtaki düğümlerin açıklamaları</h4>
 •	**Decision Tree For Classification :** Projenin adı.<BR>
 •	**Hesapla :** ID3 algoritması için gereken hesaplamaları yapan fonksiyonları bulunduran matematiksel hesapları yapan sınıf.<BR>
 •	**Nitelik :** Oluşturulacak sınıflandırma ağacındaki her bir niteliği belirtecek ve nitelik için gerekli işlemleri halledebilecek yetkinlikte bir sınıf.<BR>
 •	**Kenar :** Niteliğin içindeki kenarları ifade edecek sınıf.<BR>
 <BR>
 
-**c)	 Gelinen Aşama**
+<h4>c)Gelinen Aşama</h4>
 
 <BR>
 •	Düğümü belirtecek nitelik nesnelerini oluşturacak ve verilen bir kolonu ihtiyacı karşılar şekilde (en azından şuan kestirebilinen ihtiyaçları)  yazılan nitelik sınıfı yazıldı.<BR>
@@ -33,7 +34,7 @@ verseti üzerinde test edilmiş ve gerekli hesaplamaları doğru yaptığı gör
 
 <BR>
 
-**d)	Hedefler**<BR>
+<h4>d)	Hedefler</h4>
 •	Tkinder kütüphanesiyle basit bir arayüz tasarlanıp, kullanıcı dostu bir uygulama haline getirilecek.<BR>
 
 
