@@ -11,9 +11,9 @@ verseti üzerinde test edilmiş ve gerekli hesaplamaları doğru yaptığı gör
 **a)	Yazılımın Agaç Gösterimi** <BR>
  
 ![](img/Ekran%20Alıntısı.JPG)
-
 <BR>
-b)	Yukarıda verilen ağaçtaki düğümlerin açıklamaları<BR>
+
+**b)	Yukarıda verilen ağaçtaki düğümlerin açıklamaları**<BR>
 •	**Decision Tree For Classification :** Projenin adı.<BR>
 •	**Hesapla :** ID3 algoritması için gereken hesaplamaları yapan fonksiyonları bulunduran matematiksel hesapları yapan sınıf.<BR>
 •	**Nitelik :** Oluşturulacak sınıflandırma ağacındaki her bir niteliği belirtecek ve nitelik için gerekli işlemleri halledebilecek yetkinlikte bir sınıf.<BR>
