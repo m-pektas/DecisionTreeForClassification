@@ -36,11 +36,11 @@
         </entry>
       </file>
       <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README/README.md">
+        <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor>
-                <caret column="67" selection-start-column="67" selection-end-column="67" />
+              <first_editor relative-caret-position="95">
+                <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
               </first_editor>
               <second_editor />
             </state>
@@ -102,8 +102,8 @@
         <option value="$PROJECT_DIR$/KararAgaci.py" />
         <option value="$PROJECT_DIR$/Nitelik.py" />
         <option value="$PROJECT_DIR$/Hesapla.py" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/README/README.md" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -136,7 +136,7 @@
             <path>
               <item name="DecisionTreeForClassification" type="b2602c69:ProjectViewProjectNode" />
               <item name="DecisionTreeForClassification" type="462c0819:PsiDirectoryNode" />
-              <item name="README" type="462c0819:PsiDirectoryNode" />
+              <item name="ReadMe Images" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -152,9 +152,9 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Muhammed\Desktop\Github\DecisionTreeForClassification" />
       <recent name="C:\Users\Muhammed\Desktop\Github\DecisionTreeForClassification\README" />
       <recent name="C:\Users\Muhammed\Desktop\Github\DecisionTreeForClassification\Img" />
-      <recent name="C:\Users\Muhammed\Desktop\Github\DecisionTreeForClassification" />
       <recent name="C:\Users\Muhammed\Desktop\29.03.2018_KararAgaci" />
     </key>
   </component>
@@ -645,11 +645,11 @@
     <entry file="file://$PROJECT_DIR$/Ekran Alıntısı.JPG">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/README/README.md">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor>
-            <caret column="67" selection-start-column="67" selection-end-column="67" />
+          <first_editor relative-caret-position="95">
+            <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
           </first_editor>
           <second_editor />
         </state>

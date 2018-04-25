@@ -9,7 +9,7 @@ verseti üzerinde test edilmiş ve gerekli hesaplamaları doğru yaptığı gör
 <h2>AÇIKLAMA</h2>
 **a)	Yazılımın Agaç Gösterimi** <BR>
  
-![picture](Ekran Alıntısı.JPG)
+![picture](img/Ekran%20Alıntısı.JPG)
 
 <BR>
 b)	Yukarıda verilen ağaçtaki düğümlerin açıklamaları<BR>
