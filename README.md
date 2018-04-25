@@ -27,8 +27,6 @@ verseti üzerinde test edilmiş ve gerekli hesaplamaları doğru yaptığı gör
 •	Düğümü belirtecek nitelik nesnelerini oluşturacak ve verilen bir kolonu ihtiyacı karşılar şekilde (en azından şuan kestirebilinen ihtiyaçları)  yazılan nitelik sınıfı yazıldı.<BR>
 •	Düğümün kenarlarını ifade edecek bir kenar sınıfı yazıldı.<BR>
 •	Belirlediğimiz veri yapılarını işeyip ID3 algoritmasına ait hesapları yapabilecek bir hesapla sınıfı yazıldı.<BR>
-•	Hesapla sınıfındaki “genelEntropiHesapla” fonksiyonu test edildi ve onaylandı.<BR>
-•	Hesapla sınıfındaki “ağırlıklıEntropiHesapla” fonksiyonu test edildi ve onaylandı.<BR>
 •	Ağaç modeli başarıyla oluşturuldu.<BR>
 •	Tahmin başarı ile yapıldı.<BR>
 
