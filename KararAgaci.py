@@ -17,7 +17,7 @@ R = MC.modelOlustur(trainData, hedefNitelikAdi)
 
 #Tahmin yap
 print("\n")
-sonuc = MC.tahminEt(root=R, test=testData,i=8)# i test verisinin kaçıncı indisten başladığı.
+sonuc = MC.tahminEt(root=R, test=testData,i=8) #i test verisinin kaçıncı indisten başladığı.
 print("Tahmin sonucu :", sonuc)
 
 
