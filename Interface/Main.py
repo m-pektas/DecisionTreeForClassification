@@ -33,7 +33,12 @@ def btn1Tıklandı():
 
     dataset = pd.read_csv(file_path)
 
-    
+    frame2 = Frame(root)
+    frame2.pack(side=BOTTOM)  # asagıda cerceve olusmasını sağladık.
+    pt = Table(frame2, dataframe=dataset, showstatusbar=True, showtoolbar=True)
+    pt.show()
+
+
 btn1 = Button(frame1,text="Dataset seç",fg="blue" ,command=btn1Tıklandı)
 btn1.grid(row=2)
 
