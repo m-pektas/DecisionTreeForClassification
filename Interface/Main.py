@@ -39,6 +39,12 @@ def btn1Tıklandı():
     pt.show()
 
 
+def btn2Tıklandı():
+    root3 = Tk()
+    root3.title("Model - Başarı")
+    root3.geometry("1000x500")
+    root3.mainloop()
+
 btn1 = Button(frame1,text="Dataset seç",fg="blue" ,command=btn1Tıklandı)
 btn1.grid(row=2)
 
@@ -52,6 +58,9 @@ label3 = Label(frame1,text="Eğitim veriseti sınır indeksini yazınız:")
 label3.grid(row= 6,column = 0,sticky = E, pady=1)
 entry2 = Entry(frame1)
 entry2.grid(row=6, column = 1)
+
+btn2 = Button(frame1,text="Sonuçları Göster",fg="green" ,command=btn2Tıklandı)
+btn2.grid(row=6)
 
 
 root.mainloop()
