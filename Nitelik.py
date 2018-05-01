@@ -49,7 +49,7 @@ class Nitelik:
                 for j in self.kenarlarim:
                     if self.kolonHalim[i] == j.isim:
                         j.toplamSayim = j.toplamSayim + 1
-                        j.sinifiminSayilariSozluk[self.HedefNiteligim.kolonHalim[i]]=j.sinifiminSayilariSozluk[self.HedefNiteligim.kolonHalim[i]]+1
+                        j.sinifiminSayilariSozluk[self.HedefNiteligim.kolonHalim[i]] = j.sinifiminSayilariSozluk[self.HedefNiteligim.kolonHalim[i]]+1
 
 
     #verilen nitelikteki ayrık değerleri bulur ve liste hakinde döndürür.
