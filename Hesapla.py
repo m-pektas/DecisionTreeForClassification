@@ -47,6 +47,7 @@ class MC_Karar_Agaci:
     # ağaç oluşturur.
     def CreateTree(self, root, hedefNitelikAdi, nitelikler):
 
+        MODEL=[]
         print("---------------------------------------------")
         print("Oluşturulan Ağaç Yapısı :")
         print("---------------------------------------------")
@@ -62,8 +63,10 @@ class MC_Karar_Agaci:
                 if isinstance(i, Nitelik):  # düğüm ise                    #eleman nitelik ise
                     if i.isim == root.isim:                                #ve kök ise kök üğüm olarak adını yazdır
                         print("Kök Düğüm :" + i.isim)
+                        MODEL.append(str("Kök Düğüm :" + i.isim))
                     else:                                                  #değil ise düğüm olarak yazdır
                         print("Düğüm :" + i.isim)
+                        MODEL.append(str("Düğüm :" + i.isim))
                     for j in i.kenarlarim:                                 #niteliğin kenarlarında gez
                         hdfnt = Nitelik(ism=hedefNitelikAdi, data=j.data)  #kenarın filtelenmiş datasına göre hedef nit oluştur.
                         genelentro = self.genelEntropiHesapla(hdfNit=hdfnt)#genel entropiyi hesapla
@@ -80,10 +83,13 @@ class MC_Karar_Agaci:
 
                         if toplam == 0:                                                                         #eğer gain 0 ise
                             print("\tKenar :", j.isim, " Leaf :", j.data[hedefNitelikAdi][0])                   #yaprağa ulaşıldı demek
+                            item = str("Kenar :"+ str(j.isim) + " Leaf :"+ str(j.data[hedefNitelikAdi][0])+" ")
+                            MODEL.append(item)
                             j.targetNode = j.data[hedefNitelikAdi][0]                                           #kenarın hedef node unu o yaprak yap
                             temp.append(node)                                                                   #temp e ekle
                         else:                                                                                   #eğer gain 0 ise
                             print("\tKenar :", j.isim, " Child :", node.isim)                                   #düğüme ulaşıldı demek
+                            MODEL.append(str("Kenar :"+ j.isim+ " Child :"+ node.isim))
                             j.targetNode = node                                                                 #hedef nodu u bulunan düğüm yap
                             temp.append(node)                                                                   #gecici listeye ekle
                             nitelikler.remove(node.isim)                                                        #ve kullanılabilir nitelikler listesinden çıkar.
@@ -105,7 +111,7 @@ class MC_Karar_Agaci:
                 temp.clear()                            #temp i sil.
 
         print("-----------------------------------------")
-        return root                                      #oluşan ağacın kök ünü döndür.
+        return root,MODEL                                      #oluşan ağacın kök ünü döndür.
 
     def kokBul(self, nitelikListesi, genelEntropi):      #tüm nüteliklerin entropisi bulur ve birini kök seçer.
         gain = 0
@@ -162,6 +168,6 @@ class MC_Karar_Agaci:
         print("\t-Genel Entropi:", genelEntropi, " dir ve kök için en iyi node :", rootNode.isim,
               " olarak bulundu. Ve bu node un gaini :", gain)
 
-        kok = self.CreateTree(root=rootNode, hedefNitelikAdi=hedefNitelikAdi, nitelikler=nitelik_adlari)
+        kok,model = self.CreateTree(root=rootNode, hedefNitelikAdi=hedefNitelikAdi, nitelikler=nitelik_adlari)
 
-        return kok
+        return kok,model

@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="21400e51-e167-4c15-a20b-9960727ccee9" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hesapla.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hesapla.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Interface/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Interface/Main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -12,8 +14,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/DecisionTreeForClassification$KararAgaci.coverage" NAME="KararAgaci Coverage Results" MODIFIED="1525199851424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/DecisionTreeForClassification$Main.coverage" NAME="Main Coverage Results" MODIFIED="1525212020910" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Interface" />
+    <SUITE FILE_PATH="coverage/DecisionTreeForClassification$KararAgaci.coverage" NAME="KararAgaci Coverage Results" MODIFIED="1525258762959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DecisionTreeForClassification$Main.coverage" NAME="Main Coverage Results" MODIFIED="1525263360908" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Interface" />
     <SUITE FILE_PATH="coverage/DecisionTreeForClassification$dene.coverage" NAME="dene Coverage Results" MODIFIED="1525176901947" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/DecisionTreeForClassification$Main__1_.coverage" NAME="Main (1) Coverage Results" MODIFIED="1525208597479" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../KararAgaciGorsel" />
     <SUITE FILE_PATH="coverage/DecisionTreeForClassification$deneme2.coverage" NAME="deneme2 Coverage Results" MODIFIED="1525208631541" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../KararAgaciGorsel" />
@@ -23,10 +25,31 @@
       <file leaf-file-name="Main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Interface/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="43" column="4" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
+            <state relative-caret-position="132">
+              <caret line="99" column="37" selection-start-line="99" selection-start-column="37" selection-end-line="99" selection-end-column="37" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Hesapla.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Hesapla.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1638">
+              <caret line="90" column="76" lean-forward="true" selection-start-line="90" selection-start-column="76" selection-end-line="90" selection-end-column="76" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KararAgaci.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/KararAgaci.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="17" selection-start-line="17" selection-end-line="20" selection-end-column="31" />
+              <folding>
+                <element signature="e#22#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -71,11 +94,11 @@
         <option value="$PROJECT_DIR$/Nitelik.py" />
         <option value="$PROJECT_DIR$/mushroom.csv" />
         <option value="$PROJECT_DIR$/dene.py" />
-        <option value="$PROJECT_DIR$/Hesapla.py" />
         <option value="$PROJECT_DIR$/KararAgaci.py" />
         <option value="$PROJECT_DIR$/Interface/AnaSayfa.py" />
         <option value="$PROJECT_DIR$/../../KararAgaciGorsel/Main.py" />
         <option value="$PROJECT_DIR$/Interface/TableApp.py" />
+        <option value="$PROJECT_DIR$/Hesapla.py" />
         <option value="$PROJECT_DIR$/Interface/Main.py" />
       </list>
     </option>
@@ -89,7 +112,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="240" />
     <option name="width" value="1485" />
     <option name="height" value="955" />
@@ -254,9 +277,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.Main" />
+        <item itemvalue="Python.KararAgaci" />
         <item itemvalue="Python.deneme2" />
         <item itemvalue="Python.Main (1)" />
-        <item itemvalue="Python.KararAgaci" />
         <item itemvalue="Python.dene" />
       </list>
     </recent_temporary>
@@ -283,7 +306,7 @@
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32876712" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.3294979" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22091503" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.43529412" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14887832" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
@@ -292,12 +315,12 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.55" />
-      <window_info anchor="right" id="R Graphics" order="4" />
+      <window_info anchor="right" id="R Packages" order="5" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" id="R Packages" order="5" />
+      <window_info anchor="right" id="R Graphics" order="4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32948717" />
@@ -311,10 +334,20 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Interface/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="903">
+          <caret line="43" column="4" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/KararAgaci.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1100">
@@ -604,35 +637,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mushroom.csv" />
     <entry file="file://$PROJECT_DIR$/dene.py" />
-    <entry file="file://$PROJECT_DIR$/KararAgaci.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-          <folding>
-            <element signature="e#22#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hesapla.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="85" column="28" selection-start-line="85" selection-start-column="28" selection-end-line="85" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../KararAgaciGorsel/Main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
           <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../KararAgaciGorsel/githubb.py">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/PlayGolf.csv">
       <provider selected="true" editor-type-id="text-editor">
@@ -641,30 +651,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Interface/TableApp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" selection-start-line="8" selection-end-line="20" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Interface/TableApp.py" />
     <entry file="file://$PROJECT_DIR$/../../KararAgaciGorsel/deneme2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/KararAgaci.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="17" selection-start-line="17" selection-end-line="20" selection-end-column="31" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#22#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hesapla.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1638">
+          <caret line="90" column="76" lean-forward="true" selection-start-line="90" selection-start-column="76" selection-end-line="90" selection-end-column="76" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Interface/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="43" column="4" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
+        <state relative-caret-position="132">
+          <caret line="99" column="37" selection-start-line="99" selection-start-column="37" selection-end-line="99" selection-end-column="37" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
           </folding>
