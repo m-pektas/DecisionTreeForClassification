@@ -107,9 +107,9 @@ btn1 = Button(frame1,text="Dataset seç",fg="blue" ,command=btn1Tıklandı)
 btn1.grid(row=2)
 
 label2 = Label(frame1,text="Hedef Kolonu Giriniz:")
-label2.grid(row= 5,column = 0,sticky = E, pady=1)
+label2.grid(row= 5,column=0,sticky = E, pady=1)
 entry1 = Entry(frame1)
-entry1.grid(row=5, column = 1)
+entry1.grid(row=5, column=1)
 
 
 
