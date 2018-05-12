@@ -54,6 +54,7 @@ class MC_Karar_Agaci:
 
         nitelikler.remove(root.isim)                          #her nitelik bir kere kullanılacağından kök nitelik listeden çıkarıldı.
 
+        nitelik_bitti = False
         level = []                                            #level adında boş bir liste oluşturuldu.
         level.append(root)                                    #level nesnesine root eklendi
         temp = []                                             #temp adında bir değiş-tokuş listesi oluşturuldu.
@@ -81,20 +82,34 @@ class MC_Karar_Agaci:
                                 gain = self.kazancHesapla(genelEntropi=genelentro, NitEntropi=agirlikliEntropi) #kazancını gain'e
                                 node = x                                                                        #kendisini de node'a at
 
+
                         if toplam == 0:                                                                         #eğer gain 0 ise
                             print("\tKenar :", j.isim, " Leaf :", j.data[hedefNitelikAdi][0])                   #yaprağa ulaşıldı demek
                             item = str("Kenar :"+ str(j.isim) + " Leaf :"+ str(j.data[hedefNitelikAdi][0])+" ")
                             MODEL.append(item)
                             j.targetNode = j.data[hedefNitelikAdi][0]                                           #kenarın hedef node unu o yaprak yap
                             temp.append(node)                                                                   #temp e ekle
-                        else:                                                                                   #eğer gain 0 ise
+                        else:
+
+                            if node is None:
+                                print("<<< Nitelik  bitti.. >>>")
+                                nitelik_bitti = True
+                                break  # kenarlarım döngüsünden çıkar
+
                             print("\tKenar :", j.isim, " Child :", node.isim)                                   #düğüme ulaşıldı demek
                             MODEL.append(str("Kenar :"+ j.isim+ " Child :"+ node.isim))
                             j.targetNode = node                                                                 #hedef nodu u bulunan düğüm yap
                             temp.append(node)                                                                   #gecici listeye ekle
                             nitelikler.remove(node.isim)                                                        #ve kullanılabilir nitelikler listesinden çıkar.
+
+                    if nitelik_bitti is True:
+                        break
+
                 else:                                    #nitelik değil ise direk temp e ekle.
                     temp.append(i)
+
+            if nitelik_bitti is True:
+                break
 
             #temp te hiç düğüm var  mı bak.
             dugumVarMı = False
@@ -111,7 +126,7 @@ class MC_Karar_Agaci:
                 temp.clear()                            #temp i sil.
 
         print("-----------------------------------------")
-        return root,MODEL                                      #oluşan ağacın kök ünü döndür.
+        return root, MODEL                                      #oluşan ağacın kök ünü döndür.
 
     def kokBul(self, nitelikListesi, genelEntropi):      #tüm nüteliklerin entropisi bulur ve birini kök seçer.
         gain = 0

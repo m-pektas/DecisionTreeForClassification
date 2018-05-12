@@ -52,7 +52,7 @@ def btn2Tıklandı():
 
     test_sinir_indeks = int(entry2.get())
     trainData = dataset.iloc[0:test_sinir_indeks]  # train
-    testData = dataset.iloc[test_sinir_indeks-1:dataset.shape[0]]  # test
+    testData = dataset.iloc[test_sinir_indeks:dataset.shape[0]+1]  # test
 
     # model oluştur.
     MC = MC_Karar_Agaci()
@@ -62,7 +62,7 @@ def btn2Tıklandı():
 
     # Tahmin yap
     print("\n")
-    sonuc = MC.tahminEt(root=R, test=testData, i=8)  # i test verisinin kaçıncı indisten başladığı.
+    sonuc = MC.tahminEt(root=R, test=testData, i=test_sinir_indeks)  # i test verisinin kaçıncı indisten başladığı.
     print("Tahmin sonucu :", sonuc)
 
     frame3 = Frame(root3)
@@ -81,40 +81,45 @@ def btn2Tıklandı():
     index = 0
     for i in testData[hedefNitelikAdi]:
         if i == sonuc[index]:
-            score = score +1
+            score = score + 1
+
+        if len(sonuc)-1 == index:
+            break
 
         index = index + 1
 
 
+
     accuracy_score =  score / len(testData[hedefNitelikAdi])
     print(accuracy_score)
-
     list = []
-    for i in sonuc:
-        list.append(i)
 
-    list.append("")
+    list.append("Sonuçlar")
     list.append("Accuracy Score : " + str(accuracy_score))
+    list.append("")
+    list.append("")
+    for i in range(len(sonuc)):
+        list.append("P:" + str(sonuc[i])+" T:" + str(testData.iloc[i][hedefNitelikAdi]))
 
-    listbox2 = Listbox(frame4,width=50, height=50)
+    listbox2 = Listbox(frame4, width=50, height=50)
     for i in list:
-        listbox2.insert(END,i)
+        listbox2.insert(END, i)
     listbox2.pack(fill=BOTH, expand=0)
 
     root3.mainloop()
 
-btn1 = Button(frame1,text="Dataset seç",fg="blue" ,command=btn1Tıklandı)
+btn1 = Button(frame1, text="Dataset seç", fg="blue", command=btn1Tıklandı)
 btn1.grid(row=2)
 
 label2 = Label(frame1,text="Hedef Kolonu Giriniz:")
-label2.grid(row= 5,column=0,sticky = E, pady=1)
+label2.grid(row=5, column=0, sticky=E, pady=1)
 entry1 = Entry(frame1)
 entry1.grid(row=5, column=1)
 
 
 
 label3 = Label(frame1,text="Eğitim veriseti sınır indeksini yazınız:")
-label3.grid(row= 6,column = 0,sticky = E, pady=1)
+label3.grid(row=6, column=0, sticky=E, pady=1)
 entry2 = Entry(frame1)
 entry2.grid(row=6, column = 1)
 

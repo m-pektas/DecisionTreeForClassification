@@ -1,4 +1,4 @@
-# DecisionTree For Classification ( ID3 )
+﻿# DecisionTree For Classification ( ID3 )
 
 Üniversitede 2018 yılı bahar yarıyılı itibariyle dönem projem için <br>
 herhangi bir kütüphane kullanmadan geliştirdiğim karar ağacı algoritması. <br>
@@ -29,11 +29,7 @@ verseti üzerinde test edilmiş ve gerekli hesaplamaları doğru yaptığı gör
 •	Belirlediğimiz veri yapılarını işeyip ID3 algoritmasına ait hesapları yapabilecek bir hesapla sınıfı yazıldı.<BR>
 •	Ağaç modeli başarıyla oluşturuldu.<BR>
 •	Tahmin başarı ile yapıldı.<BR>
-
-<BR>
-
-<h4>d)	Hedefler</h4>
-•	Tkinder kütüphanesiyle basit bir arayüz tasarlanıp, kullanıcı dostu bir uygulama haline getirilecek.<BR>
+•	Tkinder kütüphanesiyle basit bir arayüz tasarlanıp, kullanıcı dostu bir uygulama haline getirildi.<BR>
 
 
 
