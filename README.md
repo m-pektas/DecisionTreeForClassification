@@ -6,6 +6,8 @@ herhangi bir kütüphane kullanmadan geliştirdiğimiz ID3 karar ağacı algorit
 Bu kod http://chem-eng.utoronto.ca/~datamining/dmc/datasets/weather_nominal.csv adresindeki <br>
 verseti üzerinde test edilmiş ve gerekli hesaplamaları doğru yaptığı görülmüştür.
 
+Mushroom verisetinde %99.64 başarı sağlanmıştır. 
+
 <h2>AÇIKLAMA</h2>
 
 <h4>a)Yazılımın Agaç Gösterimi</h4>
@@ -31,5 +33,7 @@ verseti üzerinde test edilmiş ve gerekli hesaplamaları doğru yaptığı gör
 •	Tahmin başarı ile yapıldı.<BR>
 •	Tkinder kütüphanesiyle basit bir arayüz tasarlanıp, kullanıcı dostu bir uygulama haline getirildi.<BR>
 
+<br>
+<h4>Ekran görüntüleri</h4>
 
-
+![](Img/mushroomTest.JPG)
