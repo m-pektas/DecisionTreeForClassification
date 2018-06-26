@@ -14,49 +14,44 @@ test_sinir_indeks = 0
 #pencere oluşturma
 root = Tk()
 root.title("Karar Ağacı Projesi")
-root.geometry("1000x500")
-#app = Frame(root)
-#app.grid()
+root.geometry("1480x800")
 
 frame1 = Frame(root)
 frame1.pack()
 
 
 #label ekleme
-label = Label(frame1,text="       Cevher ile Muhammed'in sınıflandırma için otomatik karar ağacı programına hoşgeldiniz..")
-label.grid()
+title = Label(frame1,text="\n Cevher ile Muhammed'in sınıflandırma için otomatik karar ağacı programına hoşgeldiniz..\n\n",font=16,fg="purple")
+title.grid()
 
 
-label3 = Label(frame1,text="                       ")
-label3.grid(row= 3,column = 0)
-
-def btn1Tıklandı():
+def Load():
     root2 = Tk()
     root2.withdraw()
     global file_path
-    file_path = filedialog.askopenfilename(filetypes=(("Csv Files", "*.csv"),("All files", "*.*")))
+    file_path = filedialog.askopenfilename(filetypes=(("All files", "*.*"),("Csv Files", "*.csv"),("Data Files", "*.data")))
 
     global dataset
     dataset = pd.read_csv(file_path)
 
     frame2 = Frame(root)
     frame2.pack(side=BOTTOM)  # asagıda cerceve olusmasını sağladık.
-    pt = Table(frame2, dataframe=dataset, showstatusbar=True, showtoolbar=True)
+    pt = Table(frame2, dataframe=dataset, showstatusbar=True, showtoolbar=True,width=1000,height=500)
     pt.show()
 
 
-def btn2Tıklandı():
+def getResult():
     root3 = Tk()
     root3.title("Model - Başarı")
-    root3.geometry("1000x500")
+    root3.geometry("1480x800")
 
-    test_sinir_indeks = int(entry2.get())
+    test_sinir_indeks = int(trainingLimitEntry.get())
     trainData = dataset.iloc[0:test_sinir_indeks]  # train
     testData = dataset.iloc[test_sinir_indeks:dataset.shape[0]+1]  # test
 
     # model oluştur.
     MC = MC_Karar_Agaci()
-    hedefNitelikAdi = entry1.get()
+    hedefNitelikAdi = targetColumnEntry.get()
 
     R,model = MC.modelOlustur(trainData, hedefNitelikAdi)
 
@@ -68,7 +63,7 @@ def btn2Tıklandı():
     frame3 = Frame(root3)
     frame3.pack(side=LEFT)
 
-    listbox = Listbox(frame3,width=50, height=50)
+    listbox = Listbox(frame3,width=50, height=50,font=16)
     for i in model:
         listbox.insert(END,i)
     listbox.pack(fill=BOTH, expand=0)
@@ -101,30 +96,37 @@ def btn2Tıklandı():
     for i in range(len(sonuc)):
         list.append("P:" + str(sonuc[i])+" T:" + str(testData.iloc[i][hedefNitelikAdi]))
 
-    listbox2 = Listbox(frame4, width=50, height=50)
+    listbox2 = Listbox(frame4, width=50, height=50,font=16)
     for i in list:
         listbox2.insert(END, i)
     listbox2.pack(fill=BOTH, expand=0)
 
     root3.mainloop()
 
-btn1 = Button(frame1, text="Dataset seç", fg="blue", command=btn1Tıklandı)
-btn1.grid(row=2)
 
-label2 = Label(frame1,text="Hedef Kolonu Giriniz:")
-label2.grid(row=5, column=0, sticky=E, pady=1)
-entry1 = Entry(frame1)
-entry1.grid(row=5, column=1)
+LoadDatasetBtn = Button(frame1, text=" Dataset seç ", fg="blue", command=Load,font=16)
+LoadDatasetBtn.grid(row=2)
 
+spacerLabel = Label(frame1,text=" ")
+spacerLabel.grid(row=3, column=0, sticky=W, pady=1)
 
+targetColumnLabel = Label(frame1,text="Hedef Kolonu Giriniz: \n",font=14)
+targetColumnLabel.grid(row=4, column=0, sticky=W, pady=1)
+targetColumnEntry = Entry(frame1,font=14)
+targetColumnEntry.grid(row=4, column=0,sticky=N)
 
-label3 = Label(frame1,text="Eğitim veriseti sınır indeksini yazınız:")
-label3.grid(row=6, column=0, sticky=E, pady=1)
-entry2 = Entry(frame1)
-entry2.grid(row=6, column = 1)
+maxDeptLabel = Label(frame1,text="*iptal* Maksimum Derinlik: \n",font=14)
+maxDeptLabel.grid(row=5, column=0, sticky=W)
+maxDeptEntry = Entry(frame1,font=14)
+maxDeptEntry.grid(row=5,column=0,sticky=N)
 
-btn2 = Button(frame1,text="Sonuçları Göster",fg="green" ,command=btn2Tıklandı)
-btn2.grid(row=6)
+trainingLimitLabel = Label(frame1,text="Eğitim veriseti sınır indeksi:\n",font=14)
+trainingLimitLabel.grid(row=6, column=0, sticky=W)
+trainingLimitEntry = Entry(frame1,font=14)
+trainingLimitEntry.grid(row=6, column = 0,sticky=N)
+
+getResultBtn = Button(frame1,text="Sonuçları Göster",fg="green" ,command=getResult,font=16)
+getResultBtn.grid(row=7)
 
 
 root.mainloop()

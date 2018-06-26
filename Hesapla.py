@@ -121,9 +121,11 @@ class MC_Karar_Agaci:
             if dugumVarMı == False:                     #düğüm yok ise ağaç oluştu demek
                 break                                   #Ağaç ı sonlandır.
             else:                                       #düğüm var ise devam etmeliyiz.
+
                 level.clear()                           #level listesini sil
                 level = temp.copy()                     #temp i level e kopyala
                 temp.clear()                            #temp i sil.
+
 
         print("-----------------------------------------")
         return root, MODEL                                      #oluşan ağacın kök ünü döndür.

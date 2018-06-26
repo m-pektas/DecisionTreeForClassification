@@ -35,5 +35,12 @@ Mushroom verisetinde %99.64 başarı sağlanmıştır.
 
 <br>
 <h4>Ekran görüntüleri</h4>
+<br>
+<h6>Anasayfa</h6>
 
-![](Img/mushroomTest.JPG)
+![](Img/kararAgaci_anasayfa.JPG)
+
+<br>
+<h6>Sonuç</h6>
+
+![](Img/kararAgaci_sonuc.JPG)
